@@ -4,7 +4,9 @@ on:
   push:
     branches: [main]
     paths:
+      - "index.html"
       - "snake/**"
+      - "ship/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -33,7 +35,7 @@ jobs:
       - name: Upload game files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./snake
+          path: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
