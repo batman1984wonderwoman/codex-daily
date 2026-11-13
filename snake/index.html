@@ -7,7 +7,7 @@
   <title>小蛇甜品屋 · Snake</title>
   <style>
     :root{--ink:#443c57;--muted:#938aa3;--cream:#fbf7ec;--paper:#fffdf7;--pink:#f4a4a7;--yellow:#f7ce75;--green:#8fc7a2;--purple:#a999d4;--shadow:0 18px 50px rgba(83,66,89,.12);--line:#eee6d7}
-    *{box-sizing:border-box}body{margin:0;min-width:900px;min-height:100vh;background-color:#f6f0df;background-image:radial-gradient(#d8cfb9 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:Nunito,"Trebuchet MS",sans-serif;overflow-x:hidden}
+    *{box-sizing:border-box}body{margin:0;min-width:0;min-height:100vh;background-color:#f6f0df;background-image:radial-gradient(#d8cfb9 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:Nunito,"Trebuchet MS",sans-serif;overflow-x:hidden}
     button{font:inherit;color:inherit;border:0;cursor:pointer}button:focus-visible{outline:3px solid #8271ba;outline-offset:3px}.app{max-width:1320px;margin:auto;padding:26px 44px 35px;position:relative}
     .topbar{height:60px;display:flex;align-items:center;justify-content:space-between;margin-bottom:19px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:44px;height:44px;border-radius:15px;background:#f5b1a9;display:grid;place-items:center;font-size:25px;box-shadow:inset 0 -4px rgba(191,110,113,.14);transform:rotate(-5deg)}.brand-name{font-family:"ZCOOL KuaiLe",Nunito,sans-serif;font-size:24px;letter-spacing:1px}.brand-sub{font-size:10px;letter-spacing:2px;color:#a39aab;font-weight:900;margin-top:-1px}.top-right{display:flex;align-items:center;gap:12px;color:#9b92a1;font-weight:800;font-size:12px}.live-dot{display:inline-block;width:8px;height:8px;background:#8cc39a;border-radius:50%;margin-right:6px;box-shadow:0 0 0 4px #8cc39a25}
     .hero{display:flex;align-items:flex-end;justify-content:space-between;margin:0 7px 16px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#ad9bc4;font-weight:1000;margin-bottom:5px}.hero h1{font-family:"ZCOOL KuaiLe",Nunito,sans-serif;font-size:34px;line-height:1;margin:0;letter-spacing:1px}.hero h1 span{color:#e89094}.hero-note{font-size:12px;color:#9b91a1;font-weight:800;padding-bottom:3px}.layout{display:grid;grid-template-columns:minmax(570px,1fr) 285px;gap:21px;align-items:stretch}
@@ -16,6 +16,49 @@
     .modal{position:absolute;inset:0;z-index:5;display:grid;place-items:center;padding:24px;background:rgba(62,52,75,.28);backdrop-filter:blur(5px);border-radius:21px;transition:opacity .22s,visibility .22s}.modal.hidden{opacity:0;visibility:hidden;pointer-events:none}.dialog{width:min(470px,96%);max-height:100%;overflow:auto;background:#fffdf8;border:1px solid #f1e8d9;border-radius:23px;box-shadow:0 24px 70px #54465a35;padding:23px 25px 22px;position:relative;animation:pop .28s cubic-bezier(.2,.85,.25,1.2)}@keyframes pop{from{transform:translateY(12px) scale(.96);opacity:.6}to{transform:none;opacity:1}}.dialog-close{position:absolute;right:15px;top:14px;border-radius:50%;width:30px;height:30px;background:#f5f0e8;color:#9a91a0;font-size:16px}.dialog-kicker{text-align:center;color:#b59ecb;font-size:10px;letter-spacing:2px;font-weight:1000}.dialog h2{text-align:center;font:26px "ZCOOL KuaiLe",Nunito,sans-serif;margin:5px 0 4px}.dialog-copy{text-align:center;font-size:11px;color:#a39aa6;font-weight:800;margin-bottom:17px}.choose-group{margin:13px 0}.choose-label{font-size:10px;font-weight:1000;color:#8b8294;letter-spacing:.8px;display:flex;justify-content:space-between;margin-bottom:7px}.choose-label small{font-size:9px;color:#b7afba;letter-spacing:0;font-weight:800}.choices{display:flex;gap:7px}.choice{flex:1;min-height:45px;border:1px solid #eee9df;border-radius:11px;background:#fffefa;text-align:center;padding:6px 3px;color:#918996;font-size:10px;font-weight:1000;transition:.15s}.choice:hover{border-color:#d9c8e5;transform:translateY(-1px)}.choice.selected{background:#f4eff9;border:1.5px solid #b4a2ce;color:#6f6186;box-shadow:0 3px 0 #eee7f4}.choice em{font-style:normal;display:block;font-size:14px;margin-bottom:1px}.style-choice{font-size:10px}.palette{display:flex;gap:12px;align-items:center;padding:3px 5px}.swatch{width:29px;height:29px;border-radius:50%;position:relative;background:var(--sw);box-shadow:inset 0 -4px #00000012;transition:transform .15s}.swatch:hover{transform:scale(1.12)}.swatch.selected:after{content:'✓';display:grid;place-items:center;position:absolute;inset:-4px;border:2px solid #746b7c;border-radius:50%;font-size:13px;color:white;text-shadow:0 1px 3px #333}.start-btn{height:47px;width:100%;border-radius:14px;background:#ef9d9d;color:white;font-size:14px;font-weight:1000;letter-spacing:.5px;box-shadow:0 5px 0 #dc8588;margin-top:12px;transition:transform .12s,box-shadow .12s}.start-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #dc8588}.start-btn:active{transform:translateY(3px);box-shadow:0 2px 0 #dc8588}.dialog-foot{text-align:center;font-size:9px;color:#b8afba;font-weight:800;margin-top:12px}
     .toast{position:absolute;top:70px;left:50%;transform:translate(-50%,-10px);z-index:8;padding:10px 16px;background:#51465c;color:#fff;border-radius:30px;font-size:11px;font-weight:900;box-shadow:0 7px 20px #51465c30;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
     @media(max-width:1050px){.app{padding:20px}.layout{grid-template-columns:minmax(530px,1fr) 250px;gap:14px}.side-card{padding:15px}.board-card{padding:13px}.canvas-wrap{height:500px}}
+    .touch-controls{display:none;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px auto 1px;max-width:360px}
+    .touch-controls button{height:42px;border-radius:12px;background:#f4eff8;border:1px solid #ece5f0;border-bottom:3px solid #e4dceb;color:#756b87;font-size:20px;font-weight:900;touch-action:none;user-select:none;-webkit-user-select:none}
+    .touch-controls button:active{background:#e9e0f1;transform:translateY(1px);border-bottom-width:2px}
+    @media(max-width:820px){
+      body{min-width:0;background-size:18px}
+      .app{width:100%;padding:14px 12px 25px}
+      .topbar{height:auto;min-height:44px;margin-bottom:17px;align-items:center}
+      .brand{gap:9px}.brand-mark{width:38px;height:38px;border-radius:13px;font-size:22px}
+      .brand-name{font-size:20px}.brand-sub{font-size:8px;letter-spacing:1.4px}
+      .top-right{font-size:10px;gap:7px}.top-right span:nth-child(2),.top-right span:nth-child(3){display:none}
+      .hero{display:block;margin:0 3px 13px}.eyebrow{font-size:9px;letter-spacing:1.5px}
+      .hero h1{font-size:clamp(23px,6vw,30px);line-height:1.15}.hero-note{font-size:10px;margin-top:5px}
+      .layout{display:flex;flex-direction:column;gap:11px}
+      .board-card{order:0;padding:10px;min-height:0;border-radius:18px}
+      .board-toolbar{height:33px;padding:0 3px 8px}.board-label{font-size:11px}.board-status{font-size:9px;letter-spacing:.4px}
+      .canvas-wrap{height:auto;aspect-ratio:6/5;border-radius:13px}
+      .canvas-tip{left:7px;bottom:7px;padding:5px 7px;font-size:8px;letter-spacing:0}
+      .float-sticker{display:none}
+      .touch-controls{display:grid}
+      .side{order:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+      .side-card{padding:13px 14px;border-radius:17px}
+      .score-card,.hint-card,.tiny-footer{grid-column:1/-1}
+      .score-card{min-height:103px}.small-cap{font-size:9px}.score-num{font-size:32px}
+      .side-head{font-size:11px;margin-bottom:9px}.stat-row{font-size:11px}
+      .progress-title{font-size:9px}.hint{font-size:10px}
+      .keys{display:none}.controls{gap:7px}.action-btn{height:42px;padding:0 9px;font-size:10px}.keycap{display:none}
+      .tiny-footer{font-size:9px;margin-top:0}
+      .modal{position:fixed;inset:0;padding:12px;border-radius:0}
+      .dialog{width:min(440px,100%);max-height:calc(100vh - 24px);padding:19px 17px 17px;border-radius:20px}
+      .dialog h2{font-size:24px}.dialog-copy{font-size:10px;margin-bottom:13px}
+      .choose-group{margin:11px 0}.choose-label{font-size:9px;letter-spacing:.3px}.choose-label small{font-size:8px}
+      .choices{gap:5px}.choice{min-height:44px;font-size:9px;padding:6px 2px}.choice em{font-size:13px}
+      .palette{gap:12px}.swatch{width:27px;height:27px}
+      .start-btn{height:45px;margin-top:10px;font-size:13px}.dialog-foot{font-size:8px;line-height:1.5}
+      .toast{top:12px;max-width:calc(100vw - 32px);white-space:nowrap}
+    }
+    @media(max-width:390px){
+      .app{padding-right:9px;padding-left:9px}
+      .dialog{padding-right:13px;padding-left:13px}
+      .side-card{padding:12px}
+      .choice{font-size:8px}
+      .palette{gap:10px}
+    }
   </style>
 </head>
 <body>
@@ -26,12 +69,18 @@
       <section class="board-card" aria-label="贪吃蛇游戏区域">
         <div class="board-toolbar"><div class="board-label"><b>✿</b>小花园游乐场</div><div class="board-status" id="boardStatus">等你来玩呢</div></div>
         <div class="canvas-wrap"><canvas id="game" aria-label="贪吃蛇游戏棋盘"></canvas><div class="canvas-tip">✦ 用方向键 / WASD 带小蛇散步 ✦</div></div>
+        <div class="touch-controls" aria-label="触屏方向控制">
+          <button type="button" data-dir="up" aria-label="向上">↑</button>
+          <button type="button" data-dir="left" aria-label="向左">←</button>
+          <button type="button" data-dir="down" aria-label="向下">↓</button>
+          <button type="button" data-dir="right" aria-label="向右">→</button>
+        </div>
         <span class="float-sticker sticker-a">🍒</span><span class="float-sticker sticker-b">🌼</span>
         <section class="modal" id="modal" aria-modal="true" role="dialog" aria-labelledby="dialogTitle"><div class="dialog"><button class="dialog-close" id="closeModal" aria-label="关闭设置">×</button><div class="dialog-kicker">WELCOME TO THE GARDEN</div><h2 id="dialogTitle">准备好出发了吗？</h2><div class="dialog-copy">挑个喜欢的小伙伴，一起去花园探险吧！</div>
           <div class="choose-group"><div class="choose-label">今天想玩哪种节奏？<small>选择难度</small></div><div class="choices" id="difficultyChoices"><button class="choice" data-value="easy"><em>🌱</em>悠闲散步</button><button class="choice selected" data-value="normal"><em>🍃</em>刚刚好</button><button class="choice" data-value="hard"><em>⚡</em>飞快一点</button></div></div>
           <div class="choose-group"><div class="choose-label">选择你的蛇蛇造型 <small>3 款小可爱</small></div><div class="choices" id="styleChoices"><button class="choice style-choice selected" data-value="round"><em>🐍</em>软糖圆圆</button><button class="choice style-choice" data-value="spiky"><em>🦔</em>星星刺刺</button><button class="choice style-choice" data-value="flower"><em>🌸</em>花花尾巴</button></div></div>
           <div class="choose-group"><div class="choose-label">给小蛇挑个颜色 <small>点一点试试看</small></div><div class="palette" id="palette"><button class="swatch selected" style="--sw:#83c79a" data-value="mint" aria-label="薄荷绿"></button><button class="swatch" style="--sw:#f29e9d" data-value="pink" aria-label="蜜桃粉"></button><button class="swatch" style="--sw:#a995d2" data-value="lilac" aria-label="薰衣草紫"></button><button class="swatch" style="--sw:#f1c45f" data-value="honey" aria-label="蜂蜜黄"></button><button class="swatch" style="--sw:#79b8d2" data-value="sky" aria-label="晴空蓝"></button></div></div>
-          <button class="start-btn" id="startGame">开始探险　✿</button><div class="dialog-foot">键盘操控 · 电脑浏览器专属小花园 · 记得慢慢玩呀</div>
+          <button class="start-btn" id="startGame">开始探险　✿</button><div class="dialog-foot">键盘或方向按钮操控 · 电脑和手机都能玩 · 记得慢慢玩呀</div>
         </div></section>
         <div class="toast" id="toast"></div>
       </section>
@@ -39,7 +88,7 @@
         <section class="side-card score-card"><div class="small-cap">TODAY'S SWEET SCORE</div><div class="score-line"><div class="score-num" id="score">00</div><div class="score-unit">颗水果 ✦</div></div><div class="best-row">个人最好 <strong id="best">0</strong>　·　再吃 <strong id="toGoal">5</strong> 颗升级</div></section>
         <section class="side-card"><h3 class="side-head"><span>🌼</span>花园小日记</h3><div class="stat-row"><span>探险状态</span><strong id="stateText">等待开始</strong></div><div class="stat-row" style="margin-top:9px"><span>当前长度</span><strong id="length">3 节</strong></div><div style="margin-top:15px"><div class="progress-title"><span>今日小目标</span><span id="goalText">0 / 5</span></div><div class="progress"><div class="progress-fill" id="progress"></div></div></div></section>
         <section class="side-card"><h3 class="side-head"><span>🎀</span>小蛇工具箱</h3><div class="controls"><button class="action-btn primary" id="pauseBtn"><span>⏸　休息一下</span><span class="keycap">SPACE</span></button><button class="action-btn" id="restartBtn"><span>↻　重新开始</span><span class="keycap">R</span></button><button class="action-btn secondary" id="settingsBtn"><span>✿　换个小伙伴</span><span class="keycap">SETUP</span></button></div></section>
-        <section class="side-card hint-card"><h3 class="side-head"><span>💌</span>花园悄悄话</h3><div class="hint">吃到水果就会长长一节。<strong>沿着花园慢慢走，别碰到边边和自己</strong>，就能一直玩下去！</div><div class="keys"><span class="key">↑</span><span class="key">←</span><span class="key">↓</span><span class="key">→</span><span style="font-size:9px;color:#a59bad;margin-left:3px">或 WASD</span></div></section>
+        <section class="side-card hint-card"><h3 class="side-head"><span>💌</span>花园悄悄话</h3><div class="hint">吃到水果就会长长一节。<strong>点按方向按钮或使用键盘，别碰到边边和自己</strong>，就能一直玩下去！</div><div class="keys"><span class="key">↑</span><span class="key">←</span><span class="key">↓</span><span class="key">→</span><span style="font-size:9px;color:#a59bad;margin-left:3px">或 WASD</span></div></section>
         <div class="tiny-footer">Made with <span>♥</span> and a little bit of sugar</div>
       </aside>
     </main>
@@ -94,6 +143,7 @@
   function step(){if(game.state!=='playing')return;game.dir=game.next;const head={x:game.snake[0].x+game.dir.x,y:game.snake[0].y+game.dir.y};const ate=head.x===game.food.x&&head.y===game.food.y;const body=ate?game.snake:game.snake.slice(0,-1);if(head.x<0||head.y<0||head.x>=COLS||head.y>=ROWS||body.some(p=>p.x===head.x&&p.y===head.y)){end();return}game.snake.unshift(head);if(ate){game.score++;if(game.score>game.best){game.best=game.score;localStorage.setItem('snake-garden-best',game.best)}for(let i=0;i<14;i++)game.particles.push({x:(boardOrigin().x+(head.x+.5)*boardOrigin().s),y:(boardOrigin().y+(head.y+.5)*boardOrigin().s),vx:(Math.random()-.5)*3*dpr,vy:(Math.random()-.7)*3*dpr,life:22,size:Math.random()*3+2,color:['#f1847d','#f1c45f','#8fc79a','#aa96d3'][i%4]});placeFood();if(game.score%5===0)toast('太棒啦！小蛇升级了 ✨');else toast(['好吃！🍓','甜甜的能量 +1 ✨','继续散步吧 🌼'][Math.floor(Math.random()*3)])}else game.snake.pop();game.particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.life--});game.particles=game.particles.filter(p=>p.life>0);game.tick++;updateHud();draw()}
   function setChoice(container,prop){container.addEventListener('click',e=>{const b=e.target.closest('[data-value]');if(!b)return;container.querySelectorAll('[data-value]').forEach(el=>el.classList.toggle('selected',el===b));game[prop]=b.dataset.value;if(prop==='style'||prop==='color')draw()})}
   setChoice(document.getElementById('difficultyChoices'),'difficulty');setChoice(document.getElementById('styleChoices'),'style');setChoice(document.getElementById('palette'),'color');
+  document.querySelectorAll('.touch-controls [data-dir]').forEach(button=>button.addEventListener('pointerdown',e=>{e.preventDefault();const dirs={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}},dir=dirs[button.dataset.dir];if(game.state==='playing'&&!(dir.x===-game.dir.x&&dir.y===-game.dir.y))game.next=dir}));
   ui.start.addEventListener('click',begin);document.getElementById('closeModal').addEventListener('click',()=>{if(game.state==='playing'||game.state==='paused')modal.classList.add('hidden');else begin()});document.getElementById('settingsBtn').addEventListener('click',()=>{clearInterval(game.timer);game.timer=null;game.state='menu';setStatus('等待开始');ui.title.textContent='准备好出发了吗？';ui.copy.textContent='挑个喜欢的小伙伴，一起去花园探险吧！';ui.start.textContent='开始探险　✿';modal.classList.remove('hidden');draw()});document.getElementById('restartBtn').addEventListener('click',begin);
   function togglePause(){if(game.state==='playing'){clearInterval(game.timer);game.timer=null;game.state='paused';setStatus('休息中');ui.pause.innerHTML='<span>▶　继续探险</span><span class="keycap">SPACE</span>';draw()}else if(game.state==='paused'){game.state='playing';setStatus('正在探险');ui.pause.innerHTML='<span>⏸　休息一下</span><span class="keycap">SPACE</span>';game.timer=setInterval(step,speeds[game.difficulty]);draw()}}
   ui.pause.addEventListener('click',togglePause);
